@@ -1,47 +1,54 @@
 #include <stdio.h>
 #include "menu.h"
 #include "page_leader.h"
+#include "page_staff.h"
+#include "page_customer.h"
 
 int main()
 {
 	int choice;
 	do
 	{
-		choice = mainMenu();
+		show_mainMenu();
+		scanf("%d", &choice);
 		switch (choice)
 		{
 		case 0:
 		{
+				  printf("即将退出系统");
 				  break;
 		}
 		case 1:
 		{
-				  //case 1 code
-				  int choice_leader;
+				  //店长页面
+				  int choice_eachPage;
 				  do{
-					  choice_leader = leaderMune();
-					  operation_leader(choice_leader);
-				  } while (choice_leader);
+					  show_leaderMune();
+					  scanf("%d", &choice_eachPage);
+					  operation_leader(choice_eachPage);
+				  } while (choice_eachPage);
 				  break;
 		}
 		case 2:
 		{
-				  //case 2 code
-				  printf("case 2, do something\n");
-				  int choice_staff = staffMune();
+				  //员工页面
+				  int choice_eachPage;
+				  do{
+					  show_staffMune();
+					  scanf("%d", &choice_eachPage);
+					  operation_staff(choice_eachPage);
+				  } while (choice_eachPage);
 				  break;
 		}
 		case 3:
 		{
-				  //case 3 code
-				  printf("case 3, do something\n");
-				  int choice_customer = customerMune();
-				  break;
-		}
-		case 4:
-		{
-				  //case 4 code
-				  printf("即将退出系统，欢迎下次使用\n");
+				  //顾客页面
+				  int choice_eachPage;
+				  do{
+					  show_customerMune();
+					  scanf("%d", &choice_eachPage);
+					  operation_customer(choice_eachPage);
+				  } while (choice_eachPage);
 				  break;
 		}
 		default:
