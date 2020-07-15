@@ -2,9 +2,9 @@ struct staff * Add_staff(struct staff *staffhead)   //增加员工的信息
 {
 	int a;
 	char c;
-	printf("请问您想增加员工信息吗(Y/N)？");
+	printf("请问您想增加员工信息吗(1/0)？");
 	scanf(" %c", &c);
-	for (a = 0; c == 'Y' || c == 'y'; a++)
+	for (a = 0; c == '1'; a++)
 	{
 		struct staff *p = NULL;
 		struct staff *q = staffhead;
@@ -35,7 +35,7 @@ struct staff * Add_staff(struct staff *staffhead)   //增加员工的信息
 			for (; q->next; q = q->next);
 			q->next = p;
 		}
-		printf("请问您想继续增加员工信息吗？(Y/N)");
+		printf("请问您想继续增加员工信息吗？(1/0)");
 		scanf(" %c", &c);
 	}
 	printf("%d 个员工的信息已经录入好\n", a);
@@ -79,9 +79,9 @@ void search_staff(struct staff *staffhead)  //寻找指定员工的信息
 	char c;
 	int a;
 	struct staff *p = NULL;
-	printf("请问您是否想要查询员工信息？(Y/y)");
+	printf("请问您是否想要查询员工信息？(1/0)");
 	scanf(" %c", &c);
-	for (; c == 'y' || c == 'Y';)
+	for (; c == '1';)
 	{
 		printf("请输入该员工的编号：");
 		scanf("%d", &a);
@@ -96,7 +96,7 @@ void search_staff(struct staff *staffhead)  //寻找指定员工的信息
 			}
 		}
 		if (p == NULL)  printf("没有找到该员工的相关信息！\n");
-		printf("请问您是否想要继续查询员工信息？(Y/y)");
+		printf("请问您是否想要继续查询员工信息？(1/0)");
 		scanf(" %c", &c);
 	}
 }
@@ -131,9 +131,9 @@ struct staff *Delete_staff(struct staff * head)  //删除指定员工的信息
 	}
 	char c;
 	int a, b;
-	printf("请问您想删除员工信息吗？（Y/N）");
+	printf("请问您想删除员工信息吗？（1/0）");
 	scanf(" %c", &c);
-	for (b = 0; c == 'Y' || c == 'y'; b++)
+	for (b = 0; c == '1'; b++)
 	{
 		struct staff *p = NULL;
 		struct staff *q = NULL;
@@ -155,7 +155,7 @@ struct staff *Delete_staff(struct staff * head)  //删除指定员工的信息
 			printf("没有找到您所想删除的员工\n");
 			b--;
 		}
-		printf("请问您还想继续删除员工信息吗？（Y/N）");
+		printf("请问您还想继续删除员工信息吗？（1/0）");
 		scanf(" %c", &c);
 	}
 	printf("%d个员工的信息已经删除成功\n", b);   //及时反馈删除情况 
@@ -170,9 +170,9 @@ struct staff  *modify_staff(struct staff *head)  //修改指定员工的信息
 	}
 	int a, b;
 	char c;
-	printf("请问您想修改员工信息吗(Y/N)？");
+	printf("请问您想修改员工信息吗(1/0)？");
 	scanf(" %c", &c);
-	for (a = 0; c == 'Y' || c == 'y'; a++)
+	for (a = 0; c == '1'; a++)
 	{
 		struct staff *p = NULL;
 		printf("请输入该员工的编号：");    //根据员工编号找到员工对信息进行修改 
@@ -200,7 +200,7 @@ struct staff  *modify_staff(struct staff *head)  //修改指定员工的信息
 			printf("未查询到您所想修改的员工，请检查编号是否输入正确！\n");
 			a--;
 		}
-		printf("请问您想继续修改员工信息吗？(Y/N)");
+		printf("请问您想继续修改员工信息吗？(1/0)");
 		scanf(" %c", &c);
 	}
 	printf("%d个员工的信息已经修改成功！\n", a);  //及时反馈员工信息 

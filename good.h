@@ -2,9 +2,9 @@ struct Good * Increase_good(struct Good * head) //增添商品的信息
 {
 	int a;
 	char c;
-	printf("请问您是否想要录入商品信息？（Y/N）");
+	printf("请问您是否想要录入商品信息？（1/0）");
 	scanf(" %c", &c);
-	for (a = 0; c == 'Y' || c == 'y'; a++)
+	for (a = 0; c == '1'; a++)
 	{
 		struct Good *p = NULL;
 		struct Good *q = NULL;
@@ -43,7 +43,7 @@ struct Good * Increase_good(struct Good * head) //增添商品的信息
 			for (q = head; q->next; q = q->next);
 			q->next = p;
 		}
-		printf("请问您是否想要继续录入商品信息呢？（Y/N）");
+		printf("请问您是否想要继续录入商品信息呢？（1/0）");
 		scanf(" %c", &c);
 	}
 	printf("%d个商品的信息已经录入成功！\n", a);  //反馈给用户信息存储情况 
@@ -103,9 +103,9 @@ struct Good* Deletegood(struct Good *head)  //删除指定商品的信息
 	}
 	int a, b;
 	char c;
-	printf("请问您想删除商品信息吗？（Y/N）");
+	printf("请问您想删除商品信息吗？（1/0）");
 	scanf(" %c", &c);
-	for (a = 0; c == 'Y' || c == 'y'; a++)
+	for (a = 0; c == '1'; a++)
 	{
 		struct Good *p = NULL;
 		struct Good *q = NULL;
@@ -127,7 +127,7 @@ struct Good* Deletegood(struct Good *head)  //删除指定商品的信息
 			printf("没有找到您所想删除的商品\n");
 			a--;
 		}
-		printf("请问您还想继续删除商品信息吗？（Y/N）");
+		printf("请问您想删除修改商品信息吗？(1/0)");
 		scanf(" %c", &c);
 	}
 	printf("%d个商品的信息已经删除成功！\n", a);   //及时反馈给用户删除情况
@@ -141,10 +141,10 @@ struct Good * modifygood(struct Good *head)  //修改商品的信息
 		return head;
 	}
 	char c;
-	printf("请问您想修改商品信息吗(Y/N)？");
+	printf("请问您想修改商品信息吗(1/0)？");
 	scanf(" %c", &c);
 	int a, b;
-	for (b = 0; c == 'Y' || c == 'y'; b++)
+	for (b = 0; c == '1'; b++)
 	{
 		struct Good *p = NULL;
 		printf("请输入该商品的编号：");
@@ -180,7 +180,7 @@ struct Good * modifygood(struct Good *head)  //修改商品的信息
 			printf("未查到该商品以修改\n");
 			b--;
 		}
-		printf("请问您想继续修改商品信息吗？(Y/N)");
+		printf("请问您想继续修改商品信息吗？(1/0)");
 		scanf(" %c", &c);
 		getchar();
 	}

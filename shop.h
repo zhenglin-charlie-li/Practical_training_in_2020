@@ -2,9 +2,9 @@ struct shop *Increase_shop(struct shop *shophead)  //增加店铺的信息
 {
 	int a;
 	char c;
-	printf("请问您想增加店铺信息吗(Y/N)？");
+	printf("请问您想增加店铺信息吗(1/0)？");
 	scanf(" %c", &c);
-	for (a = 0; c == 'Y' || c == 'y'; a++)
+	for (a = 0; c == '1'; a++)
 	{
 		struct shop *p1 = NULL;
 		struct shop *p2 = NULL;
@@ -41,7 +41,7 @@ struct shop *Increase_shop(struct shop *shophead)  //增加店铺的信息
 			for (p2 = shophead; p2->next; p2 = p2->next);
 			p2->next = p1;
 		}
-		printf("请问您想继续增加店铺信息吗？(Y/N)");
+		printf("请问您想继续增加店铺信息吗？(1/0)");
 		scanf(" %c", &c);
 	}
 	printf("%d 个店铺的信息已经录入好\n", a);   //及时反馈用户信息录入情况
@@ -89,9 +89,9 @@ void searchshop(struct shop *shophead) //查询指定店铺的信息
 	int a;
 	char c;
 	struct shop *p = NULL;
-	printf("请问您是否想要查询店铺信息？(Y/y)");
+	printf("请问您是否想要查询店铺信息？(1/0)");
 	scanf(" %c", &c);
-	for (; c == 'y' || c == 'Y';)
+	for (; c == '1';)
 	{
 		printf("请输入该店铺的编号：");
 		scanf("%d", &a);
@@ -109,7 +109,7 @@ void searchshop(struct shop *shophead) //查询指定店铺的信息
 		{
 			printf("没有找到该店铺的有关信息,请确认编号是否正确！\n");
 		}
-		printf("请问您是否想要继续查询店铺信息？(Y/y)");
+		printf("请问您是否想要继续查询店铺信息？(1/0)");
 		scanf(" %c", &c);
 	}
 }
@@ -164,9 +164,9 @@ struct shop *Deleteshop(struct shop * head) //删除指定店铺的信息
 	}
 	char c;
 	int a, b;
-	printf("请问您想删除店铺信息吗？（Y/N）");
+	printf("请问您想删除店铺信息吗？（1/0）");
 	scanf(" %c", &c);
-	for (b = 0; c == 'Y' || c == 'y'; b++)
+	for (b = 0; c == '1'; b++)
 	{
 		struct shop *p = NULL;
 		struct shop *q = NULL;
@@ -188,7 +188,7 @@ struct shop *Deleteshop(struct shop * head) //删除指定店铺的信息
 			printf("没有找到您所想删除的店铺\n");
 			b--;
 		}
-		printf("请问您还想继续删除店铺信息吗？（Y/N）");
+		printf("请问您还想继续删除店铺信息吗？（1/0）");
 		scanf(" %c", &c);
 	}
 	printf("%d个店铺的信息已经删除成功\n", b);   //及时反馈用户删除情况 
@@ -203,9 +203,9 @@ struct shop *modifyshop(struct shop *head) //修改指定店铺的信息
 	}
 	int a, b;
 	char c;
-	printf("请问您想修改店铺信息吗(Y/N)？");
+	printf("请问您想修改店铺信息吗(1/0)？");
 	scanf(" %c", &c);
-	for (a = 0; c == 'Y' || c == 'y'; a++)
+	for (a = 0; c == '1'; a++)
 	{
 		struct shop *p = NULL;
 		printf("请输入该店铺的编号：");
@@ -239,7 +239,7 @@ struct shop *modifyshop(struct shop *head) //修改指定店铺的信息
 			printf("未查询到您所想修改的店铺，请检查编号是否输入正确！\n");
 			a--;
 		}
-		printf("请问您想继续修改店铺信息吗？(Y/N)");
+		printf("请问您想继续修改店铺信息吗？(1/0)");
 		scanf(" %c", &c);
 	}
 	printf("%d个店铺的信息已经修改成功！\n", a);

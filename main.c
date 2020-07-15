@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 struct Good    //商品结构体 
 {
 	int group_number;//集团编号 
@@ -35,16 +36,17 @@ struct staff  //员工结构体
 	int  count;    //员工销售数量  
 	struct staff *next;
 };
+
 #define  GOOD  sizeof(struct Good)   //宏定义商品信息结构体的长度 
 #define  SHOP  sizeof(struct shop)   //宏定义店铺信息结构体的长度 
 #define  STAFF sizeof(struct staff)  //宏定义员工信息结构体的长度 
+
 #include "memu.h"     //菜单头文件 
 #include "good.h"     //含有管理商品信息的函数 
 #include "shop.h"     //含有管理店铺信息的函数 
 #include "staff.h"    //含有管理员工信息的函数 
 int main()
 {
-	system("color 0F");   //使用system函数调界面颜色，增加用户的体验 
 	int choice;           //记录用户的功能选项 
 	int i;
 	char c;
@@ -113,7 +115,7 @@ int main()
 				system("pause");
 				system("cls");
 			}
-			if (i == 9)  //正常退出系统 
+			if (i == 0)  //正常退出系统 
 			{
 				system("cls");
 				printf("商品信息管理系统欢迎再次为您服务！\n");
@@ -190,7 +192,7 @@ int main()
 				system("pause");
 				system("cls");
 			}
-			if (i == 10)  //退出系统 
+			if (i == 0)  //退出系统 
 			{
 				system("cls");
 				printf("店铺信息管理系统欢迎再次为您服务，再见~\n");
@@ -267,7 +269,7 @@ int main()
 				system("pause");
 				system("cls");
 			}
-			if (i == 10) //退出系统 
+			if (i == 0) //退出系统 
 			{
 				system("cls");
 				printf("员工信息管理系统欢迎再次为您服务，再见~\n");
@@ -276,7 +278,7 @@ int main()
 				break;
 			}
 		}
-		while (choice == 4) //退出系统 
+		while (choice == 0) //退出系统 
 		{
 			system("cls");
 			printf("超市管理系统欢迎再次为您服务，再见~\n");
