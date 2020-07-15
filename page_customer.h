@@ -1,12 +1,10 @@
-#include <stdio.h>
-
 void operation_customer(int choice_eachPage)
 {
 	switch (choice_eachPage)
 	{
 	case 0:
 	{
-			  printf("即将退出顾客页面，回到主菜单页面\n\n\n\n");
+			  printf("已退出顾客页面，回到主菜单页面\n\n\n\n");
 			  break;
 	}
 	case 1:

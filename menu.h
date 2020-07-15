@@ -10,21 +10,20 @@ void show_mainMenu()
 	printf("********************************\n\n\n");
 }
 
-void show_leaderMune()
+void show_adminMenu()
 {
 	printf("********************************\n");
 	printf("店长页面\n");
 	printf("请选择您的操作\n");
-	printf("1--店长operation1\n");
-	printf("2--店长operation2\n");
-	printf("3--店长operation3\n");
-	printf("4--店长operation4\n");
-	printf("5--店长operation5\n");
+	printf("1--增加店长\n");
+	printf("2--删除店长\n");
+	printf("3--增加员工\n");
+	printf("4--删除员工\n");
 	printf("0--退出店长页面，回到主菜单页面\n");
 	printf("********************************\n\n\n");
 }
 
-void show_staffMune()
+void show_staffMenu()
 {
 	printf("********************************\n");
 	printf("员工页面\n");
@@ -38,7 +37,7 @@ void show_staffMune()
 	printf("********************************\n\n\n");
 }
 
-void show_customerMune()
+void show_customerMenu()
 {
 	printf("********************************\n");
 	printf("顾客页面\n");

@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 void operation_staff(int choice_eachPage)
 {
 	switch (choice_eachPage)
