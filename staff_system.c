@@ -137,7 +137,7 @@ void add_staff()
 			index->next = new;
 			printf("\n账号\t密码\t姓名\t岗位编号\t工资\n");
 			Disply_staff(new);
-			printf("新增商品成功!\n");
+			printf("新增管理员成功!\n");
 			storage_staff(head, "goods.txt");
 		}
 

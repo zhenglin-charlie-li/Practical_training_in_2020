@@ -87,6 +87,8 @@ int findgoods()
 		struct goods *head = readFile();
 		struct goods *index = NULL;
 		index = (struct goods *)malloc(sizeof(struct goods));
+		struct goods *currtentNode = NULL;
+		currtentNode = (struct goods *)malloc(sizeof(struct goods));
 		if (index == NULL)
 		{
 			printf("没有足够的内存！");
@@ -97,6 +99,7 @@ int findgoods()
 		{
 			if (index->number == number)
 			{
+				currtentNode = index;
 				exit = 1;
 			}
 			index = index->next;
@@ -109,6 +112,8 @@ int findgoods()
 		else
 		{
 			printf("你想查找商品的商品存在\n");
+			printf("\n编号\t名称\t进价\t\t售价\t\t销量\t库存\n");
+			printf("%d\t%s\t%lf\t%lf\t%d\t%d\n", currtentNode->number, currtentNode->name, currtentNode->cost, currtentNode->price, currtentNode->sale_number, currtentNode->stay_number);
 			return 1;
 		}
 		printf("你还想继续查找商品吗？\n");
@@ -175,7 +180,7 @@ double addgoods()
 			new->sale_number = 0;
 			new->next = NULL;
 			index->next = new;
-			printf("\n编号\t名称\t进价\t售价\t销量\t库存\n");
+			printf("\n编号\t名称\t进价\t\t售价\t\t销量\t库存\n");
 			Disply(new);
 			printf("新增商品成功!\n");
 			saveToFile(head, "goods.txt");
@@ -376,7 +381,7 @@ double delgoods()
 		else
 		{
 			printf("你确定删除下述商品？\n1--确定 0--退出\n\n");
-			printf("\n编号\t名称\t进价\t售价\t销量\t库存\n");
+			printf("\n编号\t名称\t进价\t\t售价\t\t销量\t库存\n");
 			printf("%d\t%s\t%lf\t%lf\t%d\t%d\n", currtentNode->number, currtentNode->name, currtentNode->cost, currtentNode->price, currtentNode->sale_number, currtentNode->stay_number);
 			int a;
 			scanf("%d", &a);

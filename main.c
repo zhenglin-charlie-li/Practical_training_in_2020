@@ -16,12 +16,14 @@ void staff_menu();
 
 int main()
 {
+	system("color 7D");
 	int choice;           //记录用户的功能选项 
 	char c;
 	int identity = 0;
 	double finance[2] = { 0.0, 0.0 }; //income and pay
 	while (1)
 	{
+		
 		choice = main_menu();
 		system("cls");  //及时清屏以美化界面 
 		if (choice == 1)
@@ -30,6 +32,7 @@ int main()
 				identity = login(1);
 				if (identity == 1)
 				{
+					
 					super_staff_menu(finance);
 				}
 				else
@@ -44,6 +47,7 @@ int main()
 				identity = login(2);
 				if (identity == 2)
 				{
+					
 					staff_menu(finance);
 				}
 				else
@@ -62,6 +66,7 @@ int main()
 		{
 			printf("输入有误，请重试\n");
 		}
+		system("pause");
 	}
 	return 0;
 }
@@ -69,12 +74,22 @@ int main()
 void super_staff_menu(double finance[]){
 	int choice = 0;
 	while (choice != 4) {
-		printf("欢迎来到超级管理员信息查询系统！\n");
-		printf("请根据您的需求输入对应的序号：\n");
-		printf("1. 查询管理信息。\n");
-		printf("2. 查询财务信息。\n");
-		printf("3. 修改密码功能。\n");
-		printf("4. 退出当前界面。\n");
+		printf("\n\n\n\n\n\t\t*********************************************************\t\t\n");
+		printf("\t\t*                                                       *\t\t\n");
+		printf("\t\t*             欢迎来到超级管理员信息查询系统            *\t\t\n");
+		printf("\t\t*                                                       *\t\t\n");
+		printf("\t\t*********************************************************\t\t\n");
+		printf("\t\t*                                                       *\t\t\n");
+		printf("\t\t*                  1. 查询管理信息                      *\t\t\n");
+		printf("\t\t*                                                       *\t\t\n");
+		printf("\t\t*                  2. 查询财务信息                      *\t\t\n");
+		printf("\t\t*                                                       *\t\t\n");
+		printf("\t\t*                  3. 修改密码功能                      *\t\t\n");
+		printf("\t\t*                                                       *\t\t\n");
+		printf("\t\t*                  4. 退出当前界面                      *\t\t\n");
+		printf("\t\t*                                                       *\t\t\n");
+		printf("\t\t*********************************************************\t\t\n\n");
+		printf("请输入你的选择：\n");
 		scanf("%d", &choice);
 		switch (choice) {
 		case 1:
@@ -98,11 +113,20 @@ void super_staff_menu(double finance[]){
 void staff_menu(double finance[]){
 	int choice = 0;
 	while (choice != 3) {
-		printf("欢迎来到普通管理员信息查询系统！\n");
-		printf("请根据您的需求输入对应的序号：\n");
-		printf("1. 查询商品信息。\n");
-		printf("2. 修改密码功能。\n");
-		printf("3. 退出当前界面。\n");
+		printf("\n\n\n\n\n\t\t*********************************************************\t\t\n");
+		printf("\t\t*                                                       *\t\t\n");
+		printf("\t\t*             欢迎来到普通管理员信息查询系统            *\t\t\n");
+		printf("\t\t*                                                       *\t\t\n");
+		printf("\t\t*********************************************************\t\t\n");
+		printf("\t\t*                                                       *\t\t\n");
+		printf("\t\t*                  1. 查询商品信息                      *\t\t\n");
+		printf("\t\t*                                                       *\t\t\n");
+		printf("\t\t*                  2. 修改密码功能                      *\t\t\n");
+		printf("\t\t*                                                       *\t\t\n");
+		printf("\t\t*                  3. 退出当前界面                      *\t\t\n");
+		printf("\t\t*                                                       *\t\t\n");
+		printf("\t\t*********************************************************\t\t\n\n");
+		printf("请输入你的选择：\n");
 		scanf("%d", &choice);
 		switch (choice) {
 		case 1:

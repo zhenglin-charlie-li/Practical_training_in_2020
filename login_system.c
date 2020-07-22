@@ -53,7 +53,8 @@ int login(int person)
 	
 	if (person == 1)
 	{
-		printf("请输入超级管理员密码\n");
+		printf("\n\n\n\t\t\t\t欢迎您，超级管理员\n");
+		printf("\n\n\n\t\t\t请输入您的密码：");
 		scanf("%s", passward);
 		FILE* fp = NULL;
 		fp = fopen("staff.txt", "r");
@@ -72,8 +73,10 @@ int login(int person)
 		//printf("%d\t%s\t%lf\t%lf\t%d\t%d\n", node->number, node->name, node->cost, node->price, node->sale_number, node->stay_munber);
 		if (strcmp(passward, node->passward) == 0)
 		{
-			printf("超级管理员登陆成功\n");
-			printf("欢迎您！%s\n\n",node->name);
+			system("cls");  //及时清屏以美化界面 
+			printf("\t\t\t\t超级管理员登陆成功\n\n\n");
+			printf("\t\t\t\t欢迎您！%s\n\n",node->name);
+
 			fclose(fp);
 			return 1;
 		}
